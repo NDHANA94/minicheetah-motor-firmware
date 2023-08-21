@@ -5,9 +5,9 @@
 # ------------------------------------------------
 # Generic Makefile (based on gcc)
 #
-# ChangeLog :
-#	2017-02-10 - Several enhancements + project update mode
-#   2015-07-22 - first version
+# Nipun Dhananjaya Weerakkodi
+# 21.08.2023
+# 
 # ------------------------------------------------
 
 ######################################
