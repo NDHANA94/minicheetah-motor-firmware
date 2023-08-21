@@ -1,0 +1,1072 @@
+ARM GAS  /tmp/ccRkVJjh.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"can.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.MX_CAN1_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_CAN1_Init
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	MX_CAN1_Init:
+  27              	.LFB235:
+  28              		.file 1 "Core/Src/can.c"
+   1:Core/Src/can.c **** /**
+   2:Core/Src/can.c ****   ******************************************************************************
+   3:Core/Src/can.c ****   * @file    can.c
+   4:Core/Src/can.c ****   * @brief   This file provides code for the configuration
+   5:Core/Src/can.c ****   *          of the CAN instances.
+   6:Core/Src/can.c ****   ******************************************************************************
+   7:Core/Src/can.c ****   * @attention
+   8:Core/Src/can.c ****   *
+   9:Core/Src/can.c ****   * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  10:Core/Src/can.c ****   * All rights reserved.</center></h2>
+  11:Core/Src/can.c ****   *
+  12:Core/Src/can.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Core/Src/can.c ****   * the "License"; You may not use this file except in compliance with the
+  14:Core/Src/can.c ****   * License. You may obtain a copy of the License at:
+  15:Core/Src/can.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Core/Src/can.c ****   *
+  17:Core/Src/can.c ****   ******************************************************************************
+  18:Core/Src/can.c ****   */
+  19:Core/Src/can.c **** 
+  20:Core/Src/can.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/can.c **** #include "can.h"
+  22:Core/Src/can.c **** 
+  23:Core/Src/can.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/can.c **** #include "hw_config.h"
+  25:Core/Src/can.c **** #include "user_config.h"
+  26:Core/Src/can.c **** #include "math_ops.h"
+  27:Core/Src/can.c **** /* USER CODE END 0 */
+  28:Core/Src/can.c **** 
+  29:Core/Src/can.c **** CAN_HandleTypeDef hcan1;
+  30:Core/Src/can.c **** 
+ARM GAS  /tmp/ccRkVJjh.s 			page 2
+
+
+  31:Core/Src/can.c **** /* CAN1 init function */
+  32:Core/Src/can.c **** void MX_CAN1_Init(void)
+  33:Core/Src/can.c **** {
+  29              		.loc 1 33 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  34:Core/Src/can.c **** 
+  35:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_Init 0 */
+  36:Core/Src/can.c **** 
+  37:Core/Src/can.c ****   /* USER CODE END CAN1_Init 0 */
+  38:Core/Src/can.c **** 
+  39:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_Init 1 */
+  40:Core/Src/can.c **** 
+  41:Core/Src/can.c ****   /* USER CODE END CAN1_Init 1 */
+  42:Core/Src/can.c ****   hcan1.Instance = CAN1;
+  38              		.loc 1 42 3 view .LVU1
+  39              		.loc 1 42 18 is_stmt 0 view .LVU2
+  40 0002 0D48     		ldr	r0, .L5
+  41 0004 0D4B     		ldr	r3, .L5+4
+  42 0006 0360     		str	r3, [r0]
+  43:Core/Src/can.c ****   hcan1.Init.Prescaler = 3;
+  43              		.loc 1 43 3 is_stmt 1 view .LVU3
+  44              		.loc 1 43 24 is_stmt 0 view .LVU4
+  45 0008 0323     		movs	r3, #3
+  46 000a 4360     		str	r3, [r0, #4]
+  44:Core/Src/can.c ****   hcan1.Init.Mode = CAN_MODE_NORMAL;
+  47              		.loc 1 44 3 is_stmt 1 view .LVU5
+  48              		.loc 1 44 19 is_stmt 0 view .LVU6
+  49 000c 0023     		movs	r3, #0
+  50 000e 8360     		str	r3, [r0, #8]
+  45:Core/Src/can.c ****   hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
+  51              		.loc 1 45 3 is_stmt 1 view .LVU7
+  52              		.loc 1 45 28 is_stmt 0 view .LVU8
+  53 0010 C360     		str	r3, [r0, #12]
+  46:Core/Src/can.c ****   hcan1.Init.TimeSeg1 = CAN_BS1_12TQ;
+  54              		.loc 1 46 3 is_stmt 1 view .LVU9
+  55              		.loc 1 46 23 is_stmt 0 view .LVU10
+  56 0012 4FF43022 		mov	r2, #720896
+  57 0016 0261     		str	r2, [r0, #16]
+  47:Core/Src/can.c ****   hcan1.Init.TimeSeg2 = CAN_BS2_2TQ;
+  58              		.loc 1 47 3 is_stmt 1 view .LVU11
+  59              		.loc 1 47 23 is_stmt 0 view .LVU12
+  60 0018 4FF48012 		mov	r2, #1048576
+  61 001c 4261     		str	r2, [r0, #20]
+  48:Core/Src/can.c ****   hcan1.Init.TimeTriggeredMode = DISABLE;
+  62              		.loc 1 48 3 is_stmt 1 view .LVU13
+  63              		.loc 1 48 32 is_stmt 0 view .LVU14
+  64 001e 0376     		strb	r3, [r0, #24]
+  49:Core/Src/can.c ****   hcan1.Init.AutoBusOff = DISABLE;
+  65              		.loc 1 49 3 is_stmt 1 view .LVU15
+  66              		.loc 1 49 25 is_stmt 0 view .LVU16
+ARM GAS  /tmp/ccRkVJjh.s 			page 3
+
+
+  67 0020 4376     		strb	r3, [r0, #25]
+  50:Core/Src/can.c ****   hcan1.Init.AutoWakeUp = DISABLE;
+  68              		.loc 1 50 3 is_stmt 1 view .LVU17
+  69              		.loc 1 50 25 is_stmt 0 view .LVU18
+  70 0022 8376     		strb	r3, [r0, #26]
+  51:Core/Src/can.c ****   hcan1.Init.AutoRetransmission = DISABLE;
+  71              		.loc 1 51 3 is_stmt 1 view .LVU19
+  72              		.loc 1 51 33 is_stmt 0 view .LVU20
+  73 0024 C376     		strb	r3, [r0, #27]
+  52:Core/Src/can.c ****   hcan1.Init.ReceiveFifoLocked = DISABLE;
+  74              		.loc 1 52 3 is_stmt 1 view .LVU21
+  75              		.loc 1 52 32 is_stmt 0 view .LVU22
+  76 0026 0377     		strb	r3, [r0, #28]
+  53:Core/Src/can.c ****   hcan1.Init.TransmitFifoPriority = DISABLE;
+  77              		.loc 1 53 3 is_stmt 1 view .LVU23
+  78              		.loc 1 53 35 is_stmt 0 view .LVU24
+  79 0028 4377     		strb	r3, [r0, #29]
+  54:Core/Src/can.c ****   if (HAL_CAN_Init(&hcan1) != HAL_OK)
+  80              		.loc 1 54 3 is_stmt 1 view .LVU25
+  81              		.loc 1 54 7 is_stmt 0 view .LVU26
+  82 002a FFF7FEFF 		bl	HAL_CAN_Init
+  83              	.LVL0:
+  84              		.loc 1 54 6 view .LVU27
+  85 002e 00B9     		cbnz	r0, .L4
+  86              	.L1:
+  55:Core/Src/can.c ****   {
+  56:Core/Src/can.c ****     Error_Handler();
+  57:Core/Src/can.c ****   }
+  58:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_Init 2 */
+  59:Core/Src/can.c **** 
+  60:Core/Src/can.c ****   /* USER CODE END CAN1_Init 2 */
+  61:Core/Src/can.c **** 
+  62:Core/Src/can.c **** }
+  87              		.loc 1 62 1 view .LVU28
+  88 0030 08BD     		pop	{r3, pc}
+  89              	.L4:
+  56:Core/Src/can.c ****   }
+  90              		.loc 1 56 5 is_stmt 1 view .LVU29
+  91 0032 FFF7FEFF 		bl	Error_Handler
+  92              	.LVL1:
+  93              		.loc 1 62 1 is_stmt 0 view .LVU30
+  94 0036 FBE7     		b	.L1
+  95              	.L6:
+  96              		.align	2
+  97              	.L5:
+  98 0038 00000000 		.word	hcan1
+  99 003c 00640040 		.word	1073767424
+ 100              		.cfi_endproc
+ 101              	.LFE235:
+ 103              		.section	.text.HAL_CAN_MspInit,"ax",%progbits
+ 104              		.align	1
+ 105              		.global	HAL_CAN_MspInit
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.fpu fpv4-sp-d16
+ 111              	HAL_CAN_MspInit:
+ARM GAS  /tmp/ccRkVJjh.s 			page 4
+
+
+ 112              	.LVL2:
+ 113              	.LFB236:
+  63:Core/Src/can.c **** 
+  64:Core/Src/can.c **** void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
+  65:Core/Src/can.c **** {
+ 114              		.loc 1 65 1 is_stmt 1 view -0
+ 115              		.cfi_startproc
+ 116              		@ args = 0, pretend = 0, frame = 32
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		.loc 1 65 1 is_stmt 0 view .LVU32
+ 119 0000 10B5     		push	{r4, lr}
+ 120              	.LCFI1:
+ 121              		.cfi_def_cfa_offset 8
+ 122              		.cfi_offset 4, -8
+ 123              		.cfi_offset 14, -4
+ 124 0002 88B0     		sub	sp, sp, #32
+ 125              	.LCFI2:
+ 126              		.cfi_def_cfa_offset 40
+  66:Core/Src/can.c **** 
+  67:Core/Src/can.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+ 127              		.loc 1 67 3 is_stmt 1 view .LVU33
+ 128              		.loc 1 67 20 is_stmt 0 view .LVU34
+ 129 0004 0023     		movs	r3, #0
+ 130 0006 0393     		str	r3, [sp, #12]
+ 131 0008 0493     		str	r3, [sp, #16]
+ 132 000a 0593     		str	r3, [sp, #20]
+ 133 000c 0693     		str	r3, [sp, #24]
+ 134 000e 0793     		str	r3, [sp, #28]
+  68:Core/Src/can.c ****   if(canHandle->Instance==CAN1)
+ 135              		.loc 1 68 3 is_stmt 1 view .LVU35
+ 136              		.loc 1 68 15 is_stmt 0 view .LVU36
+ 137 0010 0268     		ldr	r2, [r0]
+ 138              		.loc 1 68 5 view .LVU37
+ 139 0012 194B     		ldr	r3, .L11
+ 140 0014 9A42     		cmp	r2, r3
+ 141 0016 01D0     		beq	.L10
+ 142              	.LVL3:
+ 143              	.L7:
+  69:Core/Src/can.c ****   {
+  70:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_MspInit 0 */
+  71:Core/Src/can.c **** 
+  72:Core/Src/can.c ****   /* USER CODE END CAN1_MspInit 0 */
+  73:Core/Src/can.c ****     /* CAN1 clock enable */
+  74:Core/Src/can.c ****     __HAL_RCC_CAN1_CLK_ENABLE();
+  75:Core/Src/can.c **** 
+  76:Core/Src/can.c ****     __HAL_RCC_GPIOB_CLK_ENABLE();
+  77:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+  78:Core/Src/can.c ****     PB8     ------> CAN1_RX
+  79:Core/Src/can.c ****     PB9     ------> CAN1_TX
+  80:Core/Src/can.c ****     */
+  81:Core/Src/can.c ****     GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
+  82:Core/Src/can.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  83:Core/Src/can.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+  84:Core/Src/can.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  85:Core/Src/can.c ****     GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
+  86:Core/Src/can.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  87:Core/Src/can.c **** 
+ARM GAS  /tmp/ccRkVJjh.s 			page 5
+
+
+  88:Core/Src/can.c ****     /* CAN1 interrupt Init */
+  89:Core/Src/can.c ****     HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 0, 0);
+  90:Core/Src/can.c ****     HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
+  91:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_MspInit 1 */
+  92:Core/Src/can.c **** 
+  93:Core/Src/can.c ****   /* USER CODE END CAN1_MspInit 1 */
+  94:Core/Src/can.c ****   }
+  95:Core/Src/can.c **** }
+ 144              		.loc 1 95 1 view .LVU38
+ 145 0018 08B0     		add	sp, sp, #32
+ 146              	.LCFI3:
+ 147              		.cfi_remember_state
+ 148              		.cfi_def_cfa_offset 8
+ 149              		@ sp needed
+ 150 001a 10BD     		pop	{r4, pc}
+ 151              	.LVL4:
+ 152              	.L10:
+ 153              	.LCFI4:
+ 154              		.cfi_restore_state
+  74:Core/Src/can.c **** 
+ 155              		.loc 1 74 5 is_stmt 1 view .LVU39
+ 156              	.LBB2:
+  74:Core/Src/can.c **** 
+ 157              		.loc 1 74 5 view .LVU40
+ 158 001c 0024     		movs	r4, #0
+ 159 001e 0194     		str	r4, [sp, #4]
+  74:Core/Src/can.c **** 
+ 160              		.loc 1 74 5 view .LVU41
+ 161 0020 03F5EA33 		add	r3, r3, #119808
+ 162 0024 1A6C     		ldr	r2, [r3, #64]
+ 163 0026 42F00072 		orr	r2, r2, #33554432
+ 164 002a 1A64     		str	r2, [r3, #64]
+  74:Core/Src/can.c **** 
+ 165              		.loc 1 74 5 view .LVU42
+ 166 002c 1A6C     		ldr	r2, [r3, #64]
+ 167 002e 02F00072 		and	r2, r2, #33554432
+ 168 0032 0192     		str	r2, [sp, #4]
+  74:Core/Src/can.c **** 
+ 169              		.loc 1 74 5 view .LVU43
+ 170 0034 019A     		ldr	r2, [sp, #4]
+ 171              	.LBE2:
+  74:Core/Src/can.c **** 
+ 172              		.loc 1 74 5 view .LVU44
+  76:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 173              		.loc 1 76 5 view .LVU45
+ 174              	.LBB3:
+  76:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 175              		.loc 1 76 5 view .LVU46
+ 176 0036 0294     		str	r4, [sp, #8]
+  76:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 177              		.loc 1 76 5 view .LVU47
+ 178 0038 1A6B     		ldr	r2, [r3, #48]
+ 179 003a 42F00202 		orr	r2, r2, #2
+ 180 003e 1A63     		str	r2, [r3, #48]
+  76:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 181              		.loc 1 76 5 view .LVU48
+ 182 0040 1B6B     		ldr	r3, [r3, #48]
+ARM GAS  /tmp/ccRkVJjh.s 			page 6
+
+
+ 183 0042 03F00203 		and	r3, r3, #2
+ 184 0046 0293     		str	r3, [sp, #8]
+  76:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 185              		.loc 1 76 5 view .LVU49
+ 186 0048 029B     		ldr	r3, [sp, #8]
+ 187              	.LBE3:
+  76:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 188              		.loc 1 76 5 view .LVU50
+  81:Core/Src/can.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 189              		.loc 1 81 5 view .LVU51
+  81:Core/Src/can.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 190              		.loc 1 81 25 is_stmt 0 view .LVU52
+ 191 004a 4FF44073 		mov	r3, #768
+ 192 004e 0393     		str	r3, [sp, #12]
+  82:Core/Src/can.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 193              		.loc 1 82 5 is_stmt 1 view .LVU53
+  82:Core/Src/can.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 194              		.loc 1 82 26 is_stmt 0 view .LVU54
+ 195 0050 0223     		movs	r3, #2
+ 196 0052 0493     		str	r3, [sp, #16]
+  83:Core/Src/can.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+ 197              		.loc 1 83 5 is_stmt 1 view .LVU55
+  83:Core/Src/can.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+ 198              		.loc 1 83 26 is_stmt 0 view .LVU56
+ 199 0054 0594     		str	r4, [sp, #20]
+  84:Core/Src/can.c ****     GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
+ 200              		.loc 1 84 5 is_stmt 1 view .LVU57
+  84:Core/Src/can.c ****     GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
+ 201              		.loc 1 84 27 is_stmt 0 view .LVU58
+ 202 0056 0323     		movs	r3, #3
+ 203 0058 0693     		str	r3, [sp, #24]
+  85:Core/Src/can.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+ 204              		.loc 1 85 5 is_stmt 1 view .LVU59
+  85:Core/Src/can.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+ 205              		.loc 1 85 31 is_stmt 0 view .LVU60
+ 206 005a 0923     		movs	r3, #9
+ 207 005c 0793     		str	r3, [sp, #28]
+  86:Core/Src/can.c **** 
+ 208              		.loc 1 86 5 is_stmt 1 view .LVU61
+ 209 005e 03A9     		add	r1, sp, #12
+ 210 0060 0648     		ldr	r0, .L11+4
+ 211              	.LVL5:
+  86:Core/Src/can.c **** 
+ 212              		.loc 1 86 5 is_stmt 0 view .LVU62
+ 213 0062 FFF7FEFF 		bl	HAL_GPIO_Init
+ 214              	.LVL6:
+  89:Core/Src/can.c ****     HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
+ 215              		.loc 1 89 5 is_stmt 1 view .LVU63
+ 216 0066 2246     		mov	r2, r4
+ 217 0068 2146     		mov	r1, r4
+ 218 006a 1420     		movs	r0, #20
+ 219 006c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 220              	.LVL7:
+  90:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_MspInit 1 */
+ 221              		.loc 1 90 5 view .LVU64
+ 222 0070 1420     		movs	r0, #20
+ 223 0072 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ARM GAS  /tmp/ccRkVJjh.s 			page 7
+
+
+ 224              	.LVL8:
+ 225              		.loc 1 95 1 is_stmt 0 view .LVU65
+ 226 0076 CFE7     		b	.L7
+ 227              	.L12:
+ 228              		.align	2
+ 229              	.L11:
+ 230 0078 00640040 		.word	1073767424
+ 231 007c 00040240 		.word	1073873920
+ 232              		.cfi_endproc
+ 233              	.LFE236:
+ 235              		.section	.text.HAL_CAN_MspDeInit,"ax",%progbits
+ 236              		.align	1
+ 237              		.global	HAL_CAN_MspDeInit
+ 238              		.syntax unified
+ 239              		.thumb
+ 240              		.thumb_func
+ 241              		.fpu fpv4-sp-d16
+ 243              	HAL_CAN_MspDeInit:
+ 244              	.LVL9:
+ 245              	.LFB237:
+  96:Core/Src/can.c **** 
+  97:Core/Src/can.c **** void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
+  98:Core/Src/can.c **** {
+ 246              		.loc 1 98 1 is_stmt 1 view -0
+ 247              		.cfi_startproc
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250              		.loc 1 98 1 is_stmt 0 view .LVU67
+ 251 0000 08B5     		push	{r3, lr}
+ 252              	.LCFI5:
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 3, -8
+ 255              		.cfi_offset 14, -4
+  99:Core/Src/can.c **** 
+ 100:Core/Src/can.c ****   if(canHandle->Instance==CAN1)
+ 256              		.loc 1 100 3 is_stmt 1 view .LVU68
+ 257              		.loc 1 100 15 is_stmt 0 view .LVU69
+ 258 0002 0268     		ldr	r2, [r0]
+ 259              		.loc 1 100 5 view .LVU70
+ 260 0004 084B     		ldr	r3, .L17
+ 261 0006 9A42     		cmp	r2, r3
+ 262 0008 00D0     		beq	.L16
+ 263              	.LVL10:
+ 264              	.L13:
+ 101:Core/Src/can.c ****   {
+ 102:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_MspDeInit 0 */
+ 103:Core/Src/can.c **** 
+ 104:Core/Src/can.c ****   /* USER CODE END CAN1_MspDeInit 0 */
+ 105:Core/Src/can.c ****     /* Peripheral clock disable */
+ 106:Core/Src/can.c ****     __HAL_RCC_CAN1_CLK_DISABLE();
+ 107:Core/Src/can.c **** 
+ 108:Core/Src/can.c ****     /**CAN1 GPIO Configuration
+ 109:Core/Src/can.c ****     PB8     ------> CAN1_RX
+ 110:Core/Src/can.c ****     PB9     ------> CAN1_TX
+ 111:Core/Src/can.c ****     */
+ 112:Core/Src/can.c ****     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_8|GPIO_PIN_9);
+ 113:Core/Src/can.c **** 
+ARM GAS  /tmp/ccRkVJjh.s 			page 8
+
+
+ 114:Core/Src/can.c ****     /* CAN1 interrupt Deinit */
+ 115:Core/Src/can.c ****     HAL_NVIC_DisableIRQ(CAN1_RX0_IRQn);
+ 116:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_MspDeInit 1 */
+ 117:Core/Src/can.c **** 
+ 118:Core/Src/can.c ****   /* USER CODE END CAN1_MspDeInit 1 */
+ 119:Core/Src/can.c ****   }
+ 120:Core/Src/can.c **** }
+ 265              		.loc 1 120 1 view .LVU71
+ 266 000a 08BD     		pop	{r3, pc}
+ 267              	.LVL11:
+ 268              	.L16:
+ 106:Core/Src/can.c **** 
+ 269              		.loc 1 106 5 is_stmt 1 view .LVU72
+ 270 000c 074A     		ldr	r2, .L17+4
+ 271 000e 136C     		ldr	r3, [r2, #64]
+ 272 0010 23F00073 		bic	r3, r3, #33554432
+ 273 0014 1364     		str	r3, [r2, #64]
+ 112:Core/Src/can.c **** 
+ 274              		.loc 1 112 5 view .LVU73
+ 275 0016 4FF44071 		mov	r1, #768
+ 276 001a 0548     		ldr	r0, .L17+8
+ 277              	.LVL12:
+ 112:Core/Src/can.c **** 
+ 278              		.loc 1 112 5 is_stmt 0 view .LVU74
+ 279 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 280              	.LVL13:
+ 115:Core/Src/can.c ****   /* USER CODE BEGIN CAN1_MspDeInit 1 */
+ 281              		.loc 1 115 5 is_stmt 1 view .LVU75
+ 282 0020 1420     		movs	r0, #20
+ 283 0022 FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
+ 284              	.LVL14:
+ 285              		.loc 1 120 1 is_stmt 0 view .LVU76
+ 286 0026 F0E7     		b	.L13
+ 287              	.L18:
+ 288              		.align	2
+ 289              	.L17:
+ 290 0028 00640040 		.word	1073767424
+ 291 002c 00380240 		.word	1073887232
+ 292 0030 00040240 		.word	1073873920
+ 293              		.cfi_endproc
+ 294              	.LFE237:
+ 296              		.section	.text.can_rx_init,"ax",%progbits
+ 297              		.align	1
+ 298              		.global	can_rx_init
+ 299              		.syntax unified
+ 300              		.thumb
+ 301              		.thumb_func
+ 302              		.fpu fpv4-sp-d16
+ 304              	can_rx_init:
+ 305              	.LVL15:
+ 306              	.LFB238:
+ 121:Core/Src/can.c **** 
+ 122:Core/Src/can.c **** /* USER CODE BEGIN 1 */
+ 123:Core/Src/can.c **** 
+ 124:Core/Src/can.c **** void can_rx_init(CANRxMessage *msg){
+ 307              		.loc 1 124 36 is_stmt 1 view -0
+ 308              		.cfi_startproc
+ARM GAS  /tmp/ccRkVJjh.s 			page 9
+
+
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311              		.loc 1 124 36 is_stmt 0 view .LVU78
+ 312 0000 08B5     		push	{r3, lr}
+ 313              	.LCFI6:
+ 314              		.cfi_def_cfa_offset 8
+ 315              		.cfi_offset 3, -8
+ 316              		.cfi_offset 14, -4
+ 125:Core/Src/can.c **** 	msg->filter.FilterFIFOAssignment=CAN_FILTER_FIFO0; 	// set fifo assignment
+ 317              		.loc 1 125 2 is_stmt 1 view .LVU79
+ 318              		.loc 1 125 34 is_stmt 0 view .LVU80
+ 319 0002 0023     		movs	r3, #0
+ 320 0004 8363     		str	r3, [r0, #56]
+ 126:Core/Src/can.c **** 	msg->filter.FilterIdHigh=CAN_ID<<5; 				// CAN ID
+ 321              		.loc 1 126 2 is_stmt 1 view .LVU81
+ 322              		.loc 1 126 27 is_stmt 0 view .LVU82
+ 323 0006 094A     		ldr	r2, .L21
+ 324 0008 5268     		ldr	r2, [r2, #4]
+ 325              		.loc 1 126 33 view .LVU83
+ 326 000a 5201     		lsls	r2, r2, #5
+ 327              		.loc 1 126 26 view .LVU84
+ 328 000c 8262     		str	r2, [r0, #40]
+ 127:Core/Src/can.c **** 	msg->filter.FilterIdLow=0x0;
+ 329              		.loc 1 127 2 is_stmt 1 view .LVU85
+ 330              		.loc 1 127 25 is_stmt 0 view .LVU86
+ 331 000e C362     		str	r3, [r0, #44]
+ 128:Core/Src/can.c **** 	msg->filter.FilterMaskIdHigh=0xFFF;
+ 332              		.loc 1 128 2 is_stmt 1 view .LVU87
+ 333              		.loc 1 128 30 is_stmt 0 view .LVU88
+ 334 0010 40F6FF72 		movw	r2, #4095
+ 335 0014 0263     		str	r2, [r0, #48]
+ 129:Core/Src/can.c **** 	msg->filter.FilterMaskIdLow=0;
+ 336              		.loc 1 129 2 is_stmt 1 view .LVU89
+ 337              		.loc 1 129 29 is_stmt 0 view .LVU90
+ 338 0016 4363     		str	r3, [r0, #52]
+ 130:Core/Src/can.c **** 	msg->filter.FilterMode = CAN_FILTERMODE_IDMASK;
+ 339              		.loc 1 130 2 is_stmt 1 view .LVU91
+ 340              		.loc 1 130 25 is_stmt 0 view .LVU92
+ 341 0018 0364     		str	r3, [r0, #64]
+ 131:Core/Src/can.c **** 	msg->filter.FilterScale=CAN_FILTERSCALE_32BIT;
+ 342              		.loc 1 131 2 is_stmt 1 view .LVU93
+ 343              		.loc 1 131 25 is_stmt 0 view .LVU94
+ 344 001a 0123     		movs	r3, #1
+ 345 001c 4364     		str	r3, [r0, #68]
+ 132:Core/Src/can.c **** 	msg->filter.FilterActivation=ENABLE;
+ 346              		.loc 1 132 2 is_stmt 1 view .LVU95
+ 347              		.loc 1 132 30 is_stmt 0 view .LVU96
+ 348 001e 8364     		str	r3, [r0, #72]
+ 133:Core/Src/can.c **** 	HAL_CAN_ConfigFilter(&CAN_H, &msg->filter);
+ 349              		.loc 1 133 2 is_stmt 1 view .LVU97
+ 350 0020 00F12801 		add	r1, r0, #40
+ 351 0024 0248     		ldr	r0, .L21+4
+ 352              	.LVL16:
+ 353              		.loc 1 133 2 is_stmt 0 view .LVU98
+ 354 0026 FFF7FEFF 		bl	HAL_CAN_ConfigFilter
+ 355              	.LVL17:
+ 134:Core/Src/can.c **** }
+ARM GAS  /tmp/ccRkVJjh.s 			page 10
+
+
+ 356              		.loc 1 134 1 view .LVU99
+ 357 002a 08BD     		pop	{r3, pc}
+ 358              	.L22:
+ 359              		.align	2
+ 360              	.L21:
+ 361 002c 00000000 		.word	__int_reg
+ 362 0030 00000000 		.word	hcan1
+ 363              		.cfi_endproc
+ 364              	.LFE238:
+ 366              		.section	.text.can_tx_init,"ax",%progbits
+ 367              		.align	1
+ 368              		.global	can_tx_init
+ 369              		.syntax unified
+ 370              		.thumb
+ 371              		.thumb_func
+ 372              		.fpu fpv4-sp-d16
+ 374              	can_tx_init:
+ 375              	.LVL18:
+ 376              	.LFB239:
+ 135:Core/Src/can.c **** 
+ 136:Core/Src/can.c **** void can_tx_init(CANTxMessage *msg){
+ 377              		.loc 1 136 36 is_stmt 1 view -0
+ 378              		.cfi_startproc
+ 379              		@ args = 0, pretend = 0, frame = 0
+ 380              		@ frame_needed = 0, uses_anonymous_args = 0
+ 381              		@ link register save eliminated.
+ 137:Core/Src/can.c **** 	msg->tx_header.DLC = 7; 			// message size of 7 byte
+ 382              		.loc 1 137 2 view .LVU101
+ 383              		.loc 1 137 21 is_stmt 0 view .LVU102
+ 384 0000 0723     		movs	r3, #7
+ 385 0002 8361     		str	r3, [r0, #24]
+ 138:Core/Src/can.c **** 	msg->tx_header.IDE=CAN_ID_STD; 		// set identifier to standard
+ 386              		.loc 1 138 2 is_stmt 1 view .LVU103
+ 387              		.loc 1 138 20 is_stmt 0 view .LVU104
+ 388 0004 0023     		movs	r3, #0
+ 389 0006 0361     		str	r3, [r0, #16]
+ 139:Core/Src/can.c **** 	msg->tx_header.RTR=CAN_RTR_DATA; 	// set data type to remote transmission request?
+ 390              		.loc 1 139 2 is_stmt 1 view .LVU105
+ 391              		.loc 1 139 20 is_stmt 0 view .LVU106
+ 392 0008 4361     		str	r3, [r0, #20]
+ 140:Core/Src/can.c **** 	msg->tx_header.StdId = CAN_MASTER;  // recipient CAN ID
+ 393              		.loc 1 140 2 is_stmt 1 view .LVU107
+ 394              		.loc 1 140 25 is_stmt 0 view .LVU108
+ 395 000a 024B     		ldr	r3, .L24
+ 396 000c 9B68     		ldr	r3, [r3, #8]
+ 397              		.loc 1 140 23 view .LVU109
+ 398 000e 8360     		str	r3, [r0, #8]
+ 141:Core/Src/can.c **** }
+ 399              		.loc 1 141 1 view .LVU110
+ 400 0010 7047     		bx	lr
+ 401              	.L25:
+ 402 0012 00BF     		.align	2
+ 403              	.L24:
+ 404 0014 00000000 		.word	__int_reg
+ 405              		.cfi_endproc
+ 406              	.LFE239:
+ 408              		.section	.text.pack_reply,"ax",%progbits
+ARM GAS  /tmp/ccRkVJjh.s 			page 11
+
+
+ 409              		.align	1
+ 410              		.global	pack_reply
+ 411              		.syntax unified
+ 412              		.thumb
+ 413              		.thumb_func
+ 414              		.fpu fpv4-sp-d16
+ 416              	pack_reply:
+ 417              	.LVL19:
+ 418              	.LFB240:
+ 142:Core/Src/can.c **** 
+ 143:Core/Src/can.c **** /// CAN Reply Packet Structure ///
+ 144:Core/Src/can.c **** /// 16 bit position, between -4*pi and 4*pi
+ 145:Core/Src/can.c **** /// 12 bit velocity, between -30 and + 30 rad/s
+ 146:Core/Src/can.c **** /// 12 bit current, between -40 and 40;
+ 147:Core/Src/can.c **** /// CAN Packet is 5 8-bit words
+ 148:Core/Src/can.c **** /// Formatted as follows.  For each quantity, bit 0 is LSB
+ 149:Core/Src/can.c **** /// 0: [position[15-8]]
+ 150:Core/Src/can.c **** /// 1: [position[7-0]]
+ 151:Core/Src/can.c **** /// 2: [velocity[11-4]]
+ 152:Core/Src/can.c **** /// 3: [velocity[3-0], current[11-8]]
+ 153:Core/Src/can.c **** /// 4: [current[7-0]]
+ 154:Core/Src/can.c **** void pack_reply(CANTxMessage *msg, uint8_t id, float p, float v, float t, float vb){
+ 419              		.loc 1 154 84 is_stmt 1 view -0
+ 420              		.cfi_startproc
+ 421              		@ args = 0, pretend = 0, frame = 0
+ 422              		@ frame_needed = 0, uses_anonymous_args = 0
+ 423              		.loc 1 154 84 is_stmt 0 view .LVU112
+ 424 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 425              	.LCFI7:
+ 426              		.cfi_def_cfa_offset 24
+ 427              		.cfi_offset 4, -24
+ 428              		.cfi_offset 5, -20
+ 429              		.cfi_offset 6, -16
+ 430              		.cfi_offset 7, -12
+ 431              		.cfi_offset 8, -8
+ 432              		.cfi_offset 14, -4
+ 433 0004 2DED048B 		vpush.64	{d8, d9}
+ 434              	.LCFI8:
+ 435              		.cfi_def_cfa_offset 40
+ 436              		.cfi_offset 80, -40
+ 437              		.cfi_offset 81, -36
+ 438              		.cfi_offset 82, -32
+ 439              		.cfi_offset 83, -28
+ 440 0008 0446     		mov	r4, r0
+ 441 000a 8846     		mov	r8, r1
+ 442 000c B0EE609A 		vmov.f32	s18, s1
+ 443 0010 F0EE418A 		vmov.f32	s17, s2
+ 444 0014 B0EE618A 		vmov.f32	s16, s3
+ 155:Core/Src/can.c ****     int p_int = float_to_uint(p, P_MIN, P_MAX, 16);
+ 445              		.loc 1 155 5 is_stmt 1 view .LVU113
+ 446              		.loc 1 155 17 is_stmt 0 view .LVU114
+ 447 0018 224D     		ldr	r5, .L28
+ 448 001a 1020     		movs	r0, #16
+ 449              	.LVL20:
+ 450              		.loc 1 155 17 view .LVU115
+ 451 001c 95ED141A 		vldr.32	s2, [r5, #80]
+ 452              	.LVL21:
+ARM GAS  /tmp/ccRkVJjh.s 			page 12
+
+
+ 453              		.loc 1 155 17 view .LVU116
+ 454 0020 D5ED130A 		vldr.32	s1, [r5, #76]
+ 455              	.LVL22:
+ 456              		.loc 1 155 17 view .LVU117
+ 457 0024 FFF7FEFF 		bl	float_to_uint
+ 458              	.LVL23:
+ 459              		.loc 1 155 17 view .LVU118
+ 460 0028 0746     		mov	r7, r0
+ 461              	.LVL24:
+ 156:Core/Src/can.c ****     int v_int = float_to_uint(v, V_MIN, V_MAX, 12);
+ 462              		.loc 1 156 5 is_stmt 1 view .LVU119
+ 463              		.loc 1 156 17 is_stmt 0 view .LVU120
+ 464 002a 0C20     		movs	r0, #12
+ 465              	.LVL25:
+ 466              		.loc 1 156 17 view .LVU121
+ 467 002c 95ED161A 		vldr.32	s2, [r5, #88]
+ 468 0030 D5ED150A 		vldr.32	s1, [r5, #84]
+ 469 0034 B0EE490A 		vmov.f32	s0, s18
+ 470 0038 FFF7FEFF 		bl	float_to_uint
+ 471              	.LVL26:
+ 472 003c 0646     		mov	r6, r0
+ 473              	.LVL27:
+ 157:Core/Src/can.c ****     int t_int = float_to_uint(t, -(I_MAX+SENSE_BUFFER)*KT*GR, (I_MAX+SENSE_BUFFER)*KT*GR, 12);
+ 474              		.loc 1 157 5 is_stmt 1 view .LVU122
+ 475              		.loc 1 157 36 is_stmt 0 view .LVU123
+ 476 003e D5ED037A 		vldr.32	s15, [r5, #12]
+ 477              		.loc 1 157 41 view .LVU124
+ 478 0042 9FED199A 		vldr.32	s18, .L28+4
+ 479              	.LVL28:
+ 480              		.loc 1 157 41 view .LVU125
+ 481 0046 77EE897A 		vadd.f32	s15, s15, s18
+ 482              		.loc 1 157 56 view .LVU126
+ 483 004a 95ED0E1A 		vldr.32	s2, [r5, #56]
+ 484              		.loc 1 157 55 view .LVU127
+ 485 004e 67EEC10A 		vnmul.f32	s1, s15, s2
+ 486              		.loc 1 157 59 view .LVU128
+ 487 0052 95ED117A 		vldr.32	s14, [r5, #68]
+ 488              		.loc 1 157 83 view .LVU129
+ 489 0056 27EE811A 		vmul.f32	s2, s15, s2
+ 490              		.loc 1 157 17 view .LVU130
+ 491 005a 0C20     		movs	r0, #12
+ 492              	.LVL29:
+ 493              		.loc 1 157 17 view .LVU131
+ 494 005c 27EE011A 		vmul.f32	s2, s14, s2
+ 495 0060 60EE870A 		vmul.f32	s1, s1, s14
+ 496 0064 B0EE680A 		vmov.f32	s0, s17
+ 497 0068 FFF7FEFF 		bl	float_to_uint
+ 498              	.LVL30:
+ 499 006c 0546     		mov	r5, r0
+ 500              	.LVL31:
+ 158:Core/Src/can.c ****     int vb_int = float_to_uint(vb, VB_MIN, VB_MAX, 8);
+ 501              		.loc 1 158 5 is_stmt 1 view .LVU132
+ 502              		.loc 1 158 18 is_stmt 0 view .LVU133
+ 503 006e 0820     		movs	r0, #8
+ 504              	.LVL32:
+ 505              		.loc 1 158 18 view .LVU134
+ 506 0070 9FED0E1A 		vldr.32	s2, .L28+8
+ARM GAS  /tmp/ccRkVJjh.s 			page 13
+
+
+ 507 0074 F0EE490A 		vmov.f32	s1, s18
+ 508 0078 B0EE480A 		vmov.f32	s0, s16
+ 509 007c FFF7FEFF 		bl	float_to_uint
+ 510              	.LVL33:
+ 159:Core/Src/can.c ****     msg->data[0] = id;
+ 511              		.loc 1 159 5 is_stmt 1 view .LVU135
+ 512              		.loc 1 159 18 is_stmt 0 view .LVU136
+ 513 0080 84F80180 		strb	r8, [r4, #1]
+ 160:Core/Src/can.c ****     msg->data[1] = p_int>>8;
+ 514              		.loc 1 160 5 is_stmt 1 view .LVU137
+ 515              		.loc 1 160 25 is_stmt 0 view .LVU138
+ 516 0084 3B12     		asrs	r3, r7, #8
+ 517              		.loc 1 160 18 view .LVU139
+ 518 0086 A370     		strb	r3, [r4, #2]
+ 161:Core/Src/can.c ****     msg->data[2] = p_int&0xFF;
+ 519              		.loc 1 161 5 is_stmt 1 view .LVU140
+ 520              		.loc 1 161 18 is_stmt 0 view .LVU141
+ 521 0088 E770     		strb	r7, [r4, #3]
+ 162:Core/Src/can.c ****     msg->data[3] = v_int>>4;
+ 522              		.loc 1 162 5 is_stmt 1 view .LVU142
+ 523              		.loc 1 162 25 is_stmt 0 view .LVU143
+ 524 008a 3311     		asrs	r3, r6, #4
+ 525              		.loc 1 162 18 view .LVU144
+ 526 008c 2371     		strb	r3, [r4, #4]
+ 163:Core/Src/can.c ****     msg->data[4] = ((v_int&0xF)<<4) + (t_int>>8);
+ 527              		.loc 1 163 5 is_stmt 1 view .LVU145
+ 528              		.loc 1 163 45 is_stmt 0 view .LVU146
+ 529 008e 2B12     		asrs	r3, r5, #8
+ 530              		.loc 1 163 37 view .LVU147
+ 531 0090 03EB0616 		add	r6, r3, r6, lsl #4
+ 532              	.LVL34:
+ 533              		.loc 1 163 18 view .LVU148
+ 534 0094 6671     		strb	r6, [r4, #5]
+ 164:Core/Src/can.c ****     msg->data[5] = t_int&0xFF;
+ 535              		.loc 1 164 5 is_stmt 1 view .LVU149
+ 536              		.loc 1 164 18 is_stmt 0 view .LVU150
+ 537 0096 A571     		strb	r5, [r4, #6]
+ 165:Core/Src/can.c ****     msg->data[6] = vb_int;
+ 538              		.loc 1 165 5 is_stmt 1 view .LVU151
+ 539              		.loc 1 165 18 is_stmt 0 view .LVU152
+ 540 0098 E071     		strb	r0, [r4, #7]
+ 166:Core/Src/can.c ****     }
+ 541              		.loc 1 166 5 view .LVU153
+ 542 009a BDEC048B 		vldm	sp!, {d8-d9}
+ 543              	.LCFI9:
+ 544              		.cfi_restore 82
+ 545              		.cfi_restore 83
+ 546              		.cfi_restore 80
+ 547              		.cfi_restore 81
+ 548              		.cfi_def_cfa_offset 24
+ 549              	.LVL35:
+ 550              		.loc 1 166 5 view .LVU154
+ 551 009e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 552              	.LVL36:
+ 553              	.L29:
+ 554              		.loc 1 166 5 view .LVU155
+ 555 00a2 00BF     		.align	2
+ARM GAS  /tmp/ccRkVJjh.s 			page 14
+
+
+ 556              	.L28:
+ 557 00a4 00000000 		.word	__float_reg
+ 558 00a8 00000000 		.word	0
+ 559 00ac 00002042 		.word	1109393408
+ 560              		.cfi_endproc
+ 561              	.LFE240:
+ 563              		.section	.text.unpack_cmd,"ax",%progbits
+ 564              		.align	1
+ 565              		.global	unpack_cmd
+ 566              		.syntax unified
+ 567              		.thumb
+ 568              		.thumb_func
+ 569              		.fpu fpv4-sp-d16
+ 571              	unpack_cmd:
+ 572              	.LVL37:
+ 573              	.LFB241:
+ 167:Core/Src/can.c **** 
+ 168:Core/Src/can.c **** /// CAN Command Packet Structure ///
+ 169:Core/Src/can.c **** /// 16 bit position command, between -4*pi and 4*pi
+ 170:Core/Src/can.c **** /// 12 bit velocity command, between -30 and + 30 rad/s
+ 171:Core/Src/can.c **** /// 12 bit kp, between 0 and 500 N-m/rad
+ 172:Core/Src/can.c **** /// 12 bit kd, between 0 and 100 N-m*s/rad
+ 173:Core/Src/can.c **** /// 12 bit feed forward torque, between -18 and 18 N-m
+ 174:Core/Src/can.c **** /// CAN Packet is 8 8-bit words
+ 175:Core/Src/can.c **** /// Formatted as follows.  For each quantity, bit 0 is LSB
+ 176:Core/Src/can.c **** /// 0: [position[15-8]]
+ 177:Core/Src/can.c **** /// 1: [position[7-0]]
+ 178:Core/Src/can.c **** /// 2: [velocity[11-4]]
+ 179:Core/Src/can.c **** /// 3: [velocity[3-0], kp[11-8]]
+ 180:Core/Src/can.c **** /// 4: [kp[7-0]]
+ 181:Core/Src/can.c **** /// 5: [kd[11-4]]
+ 182:Core/Src/can.c **** /// 6: [kd[3-0], torque[11-8]]
+ 183:Core/Src/can.c **** /// 7: [torque[7-0]]
+ 184:Core/Src/can.c **** void unpack_cmd(CANRxMessage msg, float *commands){// ControllerStruct * controller){
+ 574              		.loc 1 184 51 is_stmt 1 view -0
+ 575              		.cfi_startproc
+ 576              		@ args = 84, pretend = 16, frame = 0
+ 577              		@ frame_needed = 0, uses_anonymous_args = 0
+ 578              		.loc 1 184 51 is_stmt 0 view .LVU157
+ 579 0000 84B0     		sub	sp, sp, #16
+ 580              	.LCFI10:
+ 581              		.cfi_def_cfa_offset 16
+ 582 0002 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 583              	.LCFI11:
+ 584              		.cfi_def_cfa_offset 48
+ 585              		.cfi_offset 3, -48
+ 586              		.cfi_offset 4, -44
+ 587              		.cfi_offset 5, -40
+ 588              		.cfi_offset 6, -36
+ 589              		.cfi_offset 7, -32
+ 590              		.cfi_offset 8, -28
+ 591              		.cfi_offset 9, -24
+ 592              		.cfi_offset 14, -20
+ 593 0006 2DED028B 		vpush.64	{d8}
+ 594              	.LCFI12:
+ 595              		.cfi_def_cfa_offset 56
+ 596              		.cfi_offset 80, -56
+ARM GAS  /tmp/ccRkVJjh.s 			page 15
+
+
+ 597              		.cfi_offset 81, -52
+ 598 000a 0AAC     		add	r4, sp, #40
+ 599 000c 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 600 0010 1E9F     		ldr	r7, [sp, #120]
+ 185:Core/Src/can.c ****         int p_int = (msg.data[0]<<8)|msg.data[1];
+ 601              		.loc 1 185 9 is_stmt 1 view .LVU158
+ 602              		.loc 1 185 30 is_stmt 0 view .LVU159
+ 603 0012 9DF82900 		ldrb	r0, [sp, #41]	@ zero_extendqisi2
+ 604              		.loc 1 185 46 view .LVU160
+ 605 0016 9DF82A20 		ldrb	r2, [sp, #42]	@ zero_extendqisi2
+ 606              	.LVL38:
+ 186:Core/Src/can.c ****         int v_int = (msg.data[2]<<4)|(msg.data[3]>>4);
+ 607              		.loc 1 186 9 is_stmt 1 view .LVU161
+ 608              		.loc 1 186 30 is_stmt 0 view .LVU162
+ 609 001a 9DF82B30 		ldrb	r3, [sp, #43]	@ zero_extendqisi2
+ 610              		.loc 1 186 47 view .LVU163
+ 611 001e 9DF82C60 		ldrb	r6, [sp, #44]	@ zero_extendqisi2
+ 612              		.loc 1 186 50 view .LVU164
+ 613 0022 4FEA1619 		lsr	r9, r6, #4
+ 614              		.loc 1 186 13 view .LVU165
+ 615 0026 49EA0319 		orr	r9, r9, r3, lsl #4
+ 616              	.LVL39:
+ 187:Core/Src/can.c ****         int kp_int = ((msg.data[3]&0xF)<<8)|msg.data[4];
+ 617              		.loc 1 187 9 is_stmt 1 view .LVU166
+ 618              		.loc 1 187 40 is_stmt 0 view .LVU167
+ 619 002a 3602     		lsls	r6, r6, #8
+ 620 002c 06F47066 		and	r6, r6, #3840
+ 621              		.loc 1 187 53 view .LVU168
+ 622 0030 9DF82D30 		ldrb	r3, [sp, #45]	@ zero_extendqisi2
+ 623              		.loc 1 187 13 view .LVU169
+ 624 0034 1E43     		orrs	r6, r6, r3
+ 625              	.LVL40:
+ 188:Core/Src/can.c ****         int kd_int = (msg.data[5]<<4)|(msg.data[6]>>4);
+ 626              		.loc 1 188 9 is_stmt 1 view .LVU170
+ 627              		.loc 1 188 31 is_stmt 0 view .LVU171
+ 628 0036 9DF82E10 		ldrb	r1, [sp, #46]	@ zero_extendqisi2
+ 629              		.loc 1 188 48 view .LVU172
+ 630 003a 9DF82F30 		ldrb	r3, [sp, #47]	@ zero_extendqisi2
+ 631              		.loc 1 188 51 view .LVU173
+ 632 003e 4FEA1318 		lsr	r8, r3, #4
+ 633              		.loc 1 188 13 view .LVU174
+ 634 0042 48EA0118 		orr	r8, r8, r1, lsl #4
+ 635              	.LVL41:
+ 189:Core/Src/can.c ****         int t_int = ((msg.data[6]&0xF)<<8)|msg.data[7];
+ 636              		.loc 1 189 9 is_stmt 1 view .LVU175
+ 637              		.loc 1 189 39 is_stmt 0 view .LVU176
+ 638 0046 1D02     		lsls	r5, r3, #8
+ 639 0048 05F47065 		and	r5, r5, #3840
+ 640              		.loc 1 189 52 view .LVU177
+ 641 004c 9DF83030 		ldrb	r3, [sp, #48]	@ zero_extendqisi2
+ 642              		.loc 1 189 13 view .LVU178
+ 643 0050 1D43     		orrs	r5, r5, r3
+ 644              	.LVL42:
+ 190:Core/Src/can.c **** 
+ 191:Core/Src/can.c ****         commands[0] = uint_to_float(p_int, P_MIN, P_MAX, 16);
+ 645              		.loc 1 191 9 is_stmt 1 view .LVU179
+ 646              		.loc 1 191 23 is_stmt 0 view .LVU180
+ARM GAS  /tmp/ccRkVJjh.s 			page 16
+
+
+ 647 0052 234C     		ldr	r4, .L32
+ 648 0054 1021     		movs	r1, #16
+ 649 0056 D4ED140A 		vldr.32	s1, [r4, #80]
+ 650 005a 94ED130A 		vldr.32	s0, [r4, #76]
+ 651 005e 42EA0020 		orr	r0, r2, r0, lsl #8
+ 652              	.LVL43:
+ 653              		.loc 1 191 23 view .LVU181
+ 654 0062 FFF7FEFF 		bl	uint_to_float
+ 655              	.LVL44:
+ 656              		.loc 1 191 21 view .LVU182
+ 657 0066 87ED000A 		vstr.32	s0, [r7]
+ 192:Core/Src/can.c ****         commands[1] = uint_to_float(v_int, V_MIN, V_MAX, 12);
+ 658              		.loc 1 192 9 is_stmt 1 view .LVU183
+ 659              		.loc 1 192 23 is_stmt 0 view .LVU184
+ 660 006a 0C21     		movs	r1, #12
+ 661 006c D4ED160A 		vldr.32	s1, [r4, #88]
+ 662 0070 94ED150A 		vldr.32	s0, [r4, #84]
+ 663 0074 4846     		mov	r0, r9
+ 664 0076 FFF7FEFF 		bl	uint_to_float
+ 665              	.LVL45:
+ 666              		.loc 1 192 21 view .LVU185
+ 667 007a 87ED010A 		vstr.32	s0, [r7, #4]
+ 193:Core/Src/can.c ****         commands[2] = uint_to_float(kp_int, KP_MIN, KP_MAX, 12);
+ 668              		.loc 1 193 9 is_stmt 1 view .LVU186
+ 669              		.loc 1 193 23 is_stmt 0 view .LVU187
+ 670 007e 9FED198A 		vldr.32	s16, .L32+4
+ 671 0082 0C21     		movs	r1, #12
+ 672 0084 D4ED170A 		vldr.32	s1, [r4, #92]
+ 673 0088 B0EE480A 		vmov.f32	s0, s16
+ 674 008c 3046     		mov	r0, r6
+ 675 008e FFF7FEFF 		bl	uint_to_float
+ 676              	.LVL46:
+ 677              		.loc 1 193 21 view .LVU188
+ 678 0092 87ED020A 		vstr.32	s0, [r7, #8]
+ 194:Core/Src/can.c ****         commands[3] = uint_to_float(kd_int, KD_MIN, KD_MAX, 12);
+ 679              		.loc 1 194 9 is_stmt 1 view .LVU189
+ 680              		.loc 1 194 23 is_stmt 0 view .LVU190
+ 681 0096 0C21     		movs	r1, #12
+ 682 0098 D4ED180A 		vldr.32	s1, [r4, #96]
+ 683 009c B0EE480A 		vmov.f32	s0, s16
+ 684 00a0 4046     		mov	r0, r8
+ 685 00a2 FFF7FEFF 		bl	uint_to_float
+ 686              	.LVL47:
+ 687              		.loc 1 194 21 view .LVU191
+ 688 00a6 87ED030A 		vstr.32	s0, [r7, #12]
+ 195:Core/Src/can.c ****         commands[4] = uint_to_float(t_int, -I_MAX*KT*GR, I_MAX*KT*GR, 12);
+ 689              		.loc 1 195 9 is_stmt 1 view .LVU192
+ 690              		.loc 1 195 45 is_stmt 0 view .LVU193
+ 691 00aa D4ED030A 		vldr.32	s1, [r4, #12]
+ 692              		.loc 1 195 51 view .LVU194
+ 693 00ae 94ED0E7A 		vldr.32	s14, [r4, #56]
+ 694              		.loc 1 195 50 view .LVU195
+ 695 00b2 20EEC70A 		vnmul.f32	s0, s1, s14
+ 696              		.loc 1 195 54 view .LVU196
+ 697 00b6 D4ED117A 		vldr.32	s15, [r4, #68]
+ 698              		.loc 1 195 63 view .LVU197
+ 699 00ba 60EE870A 		vmul.f32	s1, s1, s14
+ARM GAS  /tmp/ccRkVJjh.s 			page 17
+
+
+ 700              		.loc 1 195 23 view .LVU198
+ 701 00be 0C21     		movs	r1, #12
+ 702 00c0 67EEA00A 		vmul.f32	s1, s15, s1
+ 703 00c4 20EE270A 		vmul.f32	s0, s0, s15
+ 704 00c8 2846     		mov	r0, r5
+ 705 00ca FFF7FEFF 		bl	uint_to_float
+ 706              	.LVL48:
+ 707              		.loc 1 195 21 view .LVU199
+ 708 00ce 87ED040A 		vstr.32	s0, [r7, #16]
+ 196:Core/Src/can.c ****     //printf("Received   ");
+ 197:Core/Src/can.c ****     //printf("%.3f  %.3f  %.3f  %.3f  %.3f   %.3f", controller->p_des, controller->v_des, controlle
+ 198:Core/Src/can.c ****     //printf("\n\r");
+ 199:Core/Src/can.c ****     }
+ 709              		.loc 1 199 5 view .LVU200
+ 710 00d2 BDEC028B 		vldm	sp!, {d8}
+ 711              	.LCFI13:
+ 712              		.cfi_restore 80
+ 713              		.cfi_restore 81
+ 714              		.cfi_def_cfa_offset 48
+ 715 00d6 BDE8F843 		pop	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 716              	.LCFI14:
+ 717              		.cfi_restore 14
+ 718              		.cfi_restore 9
+ 719              		.cfi_restore 8
+ 720              		.cfi_restore 7
+ 721              		.cfi_restore 6
+ 722              		.cfi_restore 5
+ 723              		.cfi_restore 4
+ 724              		.cfi_restore 3
+ 725              		.cfi_def_cfa_offset 16
+ 726              	.LVL49:
+ 727              		.loc 1 199 5 view .LVU201
+ 728 00da 04B0     		add	sp, sp, #16
+ 729              	.LCFI15:
+ 730              		.cfi_def_cfa_offset 0
+ 731 00dc 7047     		bx	lr
+ 732              	.L33:
+ 733 00de 00BF     		.align	2
+ 734              	.L32:
+ 735 00e0 00000000 		.word	__float_reg
+ 736 00e4 00000000 		.word	0
+ 737              		.cfi_endproc
+ 738              	.LFE241:
+ 740              		.comm	hcan1,40,4
+ 741              		.text
+ 742              	.Letext0:
+ 743              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 744              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
+ 745              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 746              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 747              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 748              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 749              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 750              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"
+ 751              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 752              		.file 11 "Core/Inc/can.h"
+ 753              		.file 12 "Core/Inc/user_config.h"
+ARM GAS  /tmp/ccRkVJjh.s 			page 18
+
+
+ 754              		.file 13 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
+ 755              		.file 14 "/usr/include/newlib/sys/_types.h"
+ 756              		.file 15 "/usr/include/newlib/sys/reent.h"
+ 757              		.file 16 "/usr/include/newlib/sys/lock.h"
+ 758              		.file 17 "/usr/include/newlib/math.h"
+ 759              		.file 18 "Core/Inc/math_ops.h"
+ 760              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 761              		.file 20 "Core/Inc/main.h"
+ARM GAS  /tmp/ccRkVJjh.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 can.c
+     /tmp/ccRkVJjh.s:18     .text.MX_CAN1_Init:0000000000000000 $t
+     /tmp/ccRkVJjh.s:26     .text.MX_CAN1_Init:0000000000000000 MX_CAN1_Init
+     /tmp/ccRkVJjh.s:98     .text.MX_CAN1_Init:0000000000000038 $d
+                            *COM*:0000000000000028 hcan1
+     /tmp/ccRkVJjh.s:104    .text.HAL_CAN_MspInit:0000000000000000 $t
+     /tmp/ccRkVJjh.s:111    .text.HAL_CAN_MspInit:0000000000000000 HAL_CAN_MspInit
+     /tmp/ccRkVJjh.s:230    .text.HAL_CAN_MspInit:0000000000000078 $d
+     /tmp/ccRkVJjh.s:236    .text.HAL_CAN_MspDeInit:0000000000000000 $t
+     /tmp/ccRkVJjh.s:243    .text.HAL_CAN_MspDeInit:0000000000000000 HAL_CAN_MspDeInit
+     /tmp/ccRkVJjh.s:290    .text.HAL_CAN_MspDeInit:0000000000000028 $d
+     /tmp/ccRkVJjh.s:297    .text.can_rx_init:0000000000000000 $t
+     /tmp/ccRkVJjh.s:304    .text.can_rx_init:0000000000000000 can_rx_init
+     /tmp/ccRkVJjh.s:361    .text.can_rx_init:000000000000002c $d
+     /tmp/ccRkVJjh.s:367    .text.can_tx_init:0000000000000000 $t
+     /tmp/ccRkVJjh.s:374    .text.can_tx_init:0000000000000000 can_tx_init
+     /tmp/ccRkVJjh.s:404    .text.can_tx_init:0000000000000014 $d
+     /tmp/ccRkVJjh.s:409    .text.pack_reply:0000000000000000 $t
+     /tmp/ccRkVJjh.s:416    .text.pack_reply:0000000000000000 pack_reply
+     /tmp/ccRkVJjh.s:557    .text.pack_reply:00000000000000a4 $d
+     /tmp/ccRkVJjh.s:564    .text.unpack_cmd:0000000000000000 $t
+     /tmp/ccRkVJjh.s:571    .text.unpack_cmd:0000000000000000 unpack_cmd
+     /tmp/ccRkVJjh.s:735    .text.unpack_cmd:00000000000000e0 $d
+
+UNDEFINED SYMBOLS
+HAL_CAN_Init
+Error_Handler
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_GPIO_DeInit
+HAL_NVIC_DisableIRQ
+HAL_CAN_ConfigFilter
+__int_reg
+float_to_uint
+__float_reg
+uint_to_float
